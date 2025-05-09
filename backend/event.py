@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class FreeEvent:
+class Event:
     starttime: datetime
     endtime: datetime
 
