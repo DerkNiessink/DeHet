@@ -10,15 +10,9 @@ class Calendar:
     def __init__(self, fn: str):
         with open(fn, "rb") as f:
             self.components = iCalendar.from_ical(f.read())
-        self.events = self._get_events()
+        self.events = self._extract_events()
 
-    def _get_events(self) -> list[Event]:
-        """
-        Get all events from the calendar.
-
-        Returns:
-            list[Event]: List of events in the calendar.
-        """
+    def _extract_events(self) -> list[Event]:
         events = []
         for component in self.components.walk():
             if component.name == "VEVENT":
@@ -71,6 +65,7 @@ if __name__ == "__main__":
     start_day = start_day.astimezone(to_zone)
     end_day = datetime(2025, 5, 7, 23, 59).replace(tzinfo=from_zone)
     end_day = end_day.astimezone(to_zone)
+    event = Event(start_day, end_day)
 
-    free_slots = calendar.get_free_events(start_day, end_day)
+    free_slots = calendar.get_free_events(event)
     print(free_slots)
