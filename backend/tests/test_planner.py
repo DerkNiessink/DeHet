@@ -6,7 +6,7 @@ import os
 one_dir_up = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(one_dir_up)
 from event import Event
-from planner import find_pairwise_overlaps, find_all_overlaps
+from planner import find_pairwise_overlaps, find_all_overlaps, return_ranking
 
 # Example input (Calendars with events that last at least 2 hours and have overlaps)
 calendar1 = [
@@ -47,4 +47,5 @@ for cal in find_all_overlaps(calendars):
     print("-----")
 
 
-print(find_all_overlaps(calendars))
+print("Ranking of calendars:")
+return_ranking(calendars)
