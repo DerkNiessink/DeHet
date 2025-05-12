@@ -5,7 +5,7 @@ from overlap_finder import find_all_overlaps
 
 def get_sorted_overlaps(overlap: dict[tuple[int, ...], list[Event]]) -> list[Event]:
     flattened = [event for sublist in overlap.values() for event in sublist]
-    return sorted(flattened, key=lambda x: x.duration(), reverse=True)
+    return sorted(flattened, key=lambda x: x.duration, reverse=True)
 
 
 def find_event_owners(
@@ -38,7 +38,7 @@ def print_ranking(ranking: list[tuple[tuple[int, ...], Event]]) -> None:
     print(f"Ranking of calendars with {current_level} participants:")
     for participants, event in ranking:
         print(
-            f"Participants: {participants}, Duration: {event.duration()}, "
+            f"Participants: {participants}, Duration: {event.duration}, "
             f"Start: {event.starttime}, End: {event.endtime}"
         )
         print("-" * 5)

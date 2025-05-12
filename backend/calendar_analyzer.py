@@ -54,7 +54,7 @@ class CalendarAnalyzer:
                 print("-" * 20)
 
             print(
-                f"Participants: {participants}, Duration: {event.duration()}, "
+                f"Participants: {participants}, Duration: {event.duration}, "
                 f"Start: {event.starttime}, End: {event.endtime}"
             )
             print("-" * 5)
@@ -71,7 +71,7 @@ class CalendarAnalyzer:
             writer.writerow(["Participants", "Start", "End", "Duration"])
             for participants, event in self.ranking:
                 writer.writerow(
-                    [participants, event.starttime, event.endtime, event.duration()]
+                    [participants, event.starttime, event.endtime, event.duration]
                 )
 
     def find_pairwise_overlaps(
@@ -155,7 +155,7 @@ class CalendarAnalyzer:
             list: Sorted list of Event objects.
         """
         flattened = [event for sublist in overlap.values() for event in sublist]
-        return sorted(flattened, key=lambda x: x.duration(), reverse=True)
+        return sorted(flattened, key=lambda x: x.duration, reverse=True)
 
     def _find_event_owners(
         self, overlap: dict, events: list[Event]

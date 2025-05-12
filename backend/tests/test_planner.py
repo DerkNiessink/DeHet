@@ -8,7 +8,7 @@ sys.path.append(one_dir_up)
 from event import Event
 from overlap_finder import find_pairwise_overlaps, find_all_overlaps
 from ranker import return_ranking
-from CalendarAnalyzer import CalendarAnalyzer
+from backend.calendar_analyzer import CalendarAnalyzer
 
 # Example input (Calendars with events that last at least 2 hours and have overlaps)
 calendar1 = [
