@@ -1,5 +1,3 @@
-from datetime import datetime
-import numpy as np
 from event import Event
 
 
@@ -57,40 +55,3 @@ def find_all_overlaps(
         overlaps.append(merge_overlaps(overlaps[-1]))
 
     return overlaps[:-1]
-
-
-def return_ranking(calendars: list[list[Event]]):
-    """
-    Return a ranking of calendars based on the number of overlapping events and their duration.
-    """
-    overlaps = find_all_overlaps(calendars)
-
-    # reverse the overlaps list
-    overlaps.reverse()
-
-    for overlap in overlaps:
-        flattened_overlaps = [
-            event for sublist in overlap.values() for event in sublist
-        ]
-
-        # sort the flattened overlaps by duration
-        sorted_overlaps = sorted(
-            flattened_overlaps, key=lambda x: x.duration(), reverse=True
-        )
-
-        sorted_keys = [
-            key
-            for key, value in overlap.items()
-            for sorted_overlap in sorted_overlaps
-            if sorted_overlap in value
-        ]
-
-        # calculate how many numbers the tupel of one of the keys has
-        print("-" * 20)
-
-        print(f"Ranking of calendars with {len(sorted_keys[0])} participants:")
-        for participants, event in zip(sorted_keys, sorted_overlaps):
-            print(
-                f"Participants: {participants}, Duration: {event.duration()}, Start: {event.starttime}, End: {event.endtime}"
-            )
-            print("-" * 5)
