@@ -1,12 +1,15 @@
-from datetime import datetime
-from dataclasses import dataclass
+from custom_time import CustomTime
 
 
-@dataclass
 class Event:
-    starttime: datetime
-    endtime: datetime
+    def __init__(self, starttime: CustomTime, endtime: CustomTime):
+        self.starttime = starttime.to_local_time()
+        self.endtime = endtime.to_local_time()
 
+    def __repr__(self):
+        return f"Event({self.starttime}, {self.endtime})"
+
+    @property
     def duration(self):
         """Calculates the duration between starttime and endtime."""
         return self.endtime - self.starttime
