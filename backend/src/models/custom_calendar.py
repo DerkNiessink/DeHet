@@ -1,8 +1,7 @@
 from icalendar import Calendar as iCalendar
-from datetime import datetime
 
-from event import Event
-from custom_time import CustomTime
+from models.event import Event
+from models.custom_time import CustomTime
 
 
 class Calendar:
@@ -46,7 +45,7 @@ class Calendar:
         current = start_time
         for event in self.events:
             if event.starttime.date() == start_time.date():
-                event_start = max(event.starttime, start_day)
+                event_start = max(event.starttime, start_time)
                 event_end = min(event.endtime, end_time)
                 if event_start > current:
 
@@ -61,13 +60,3 @@ class Calendar:
                 break
 
         return free_events
-
-
-if __name__ == "__main__":
-    calendar = Calendar("ics/sacha@wearebit.com.ics")
-
-    start_day = CustomTime(2025, 5, 2, 7).to_local_time()
-    end_day = CustomTime(2025, 5, 2, 15).to_local_time()
-    free_slots = calendar.get_free_events(start_day, end_day)
-    for slot in free_slots:
-        print(f"Free slot: {slot.starttime} - {slot.endtime}")

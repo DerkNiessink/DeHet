@@ -1,4 +1,4 @@
-from custom_time import CustomTime
+from models.custom_time import CustomTime
 
 
 class Event:
