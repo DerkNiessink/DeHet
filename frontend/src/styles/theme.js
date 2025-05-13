@@ -1,0 +1,177 @@
+// /* Global theme variables */
+// :root {
+//     --primary - color: #ff69b4; /* Hot Pink */
+//     --primary - light: #ffb6c1; /* Light Pink */
+//     --primary - dark: #c71585; /* Medium Violet Red */
+//     --secondary - color: #f8f9fa;
+//     --text - color: #333;
+//     --text - light: #fff;
+//     --text - on - primary: #fff;
+//     --border - radius: 8px;
+//     --box - shadow: 0 4px 6px rgba(255, 105, 180, 0.1);
+//     --transition: all 0.3s ease;
+//     --spacing - xs: 4px;
+//     --spacing - sm: 8px;
+//     --spacing - md: 16px;
+//     --spacing - lg: 24px;
+//     --spacing - xl: 32px;
+// }
+
+//   /* Reset and base styles */
+//   * {
+//     margin: 0;
+//     padding: 0;
+//     box- sizing: border - box;
+//   }
+  
+//   body {
+//     font - family: 'Segoe UI', Tahoma, Geneva, Verdana, sans - serif;
+//     line - height: 1.6;
+//     color: var(--text - color);
+//     background - color: #fef5f9; /* Very light pink background */
+// }
+
+// h1, h2, h3, h4, h5, h6 {
+//     color: var(--primary - dark);
+//     margin - bottom: var(--spacing - md);
+// }
+
+//   /* Layout styles */
+//   .layout - container {
+//     min - height: 100vh;
+//     display: flex;
+//     flex - direction: column;
+// }
+  
+//   .layout - main {
+//     flex: 1;
+//     max - width: 1200px;
+//     margin: 0 auto;
+//     padding: var(--spacing - lg);
+//     width: 100 %;
+// }
+  
+//   .layout - footer {
+//     text - align: center;
+//     padding: var(--spacing - md) 0;
+//     background - color: var(--primary - color);
+//     color: var(--text - light);
+//     margin - top: var(--spacing - xl);
+// }
+
+//   /* App container */
+//   .app - container {
+//     display: flex;
+//     flex - direction: column;
+//     align - items: center;
+//     gap: var(--spacing - xl);
+//     padding: var(--spacing - xl) 0;
+// }
+
+//   /* File Upload Component */
+//   .file - upload - container {
+//     display: flex;
+//     flex - direction: column;
+//     align - items: center;
+//     gap: var(--spacing - md);
+//     width: 100 %;
+//     max - width: 500px;
+// }
+  
+//   .upload - button {
+//     display: inline - block;
+//     background - color: var(--primary - color);
+//     color: var(--text - light);
+//     padding: var(--spacing - md) var(--spacing - lg);
+//     border - radius: var(--border - radius);
+//     cursor: pointer;
+//     font - weight: bold;
+//     transition: var(--transition);
+//     text - align: center;
+//     box - shadow: var(--box - shadow);
+// }
+  
+//   .upload - button:hover {
+//     background - color: var(--primary - dark);
+//     transform: translateY(-2px);
+// }
+  
+//   .file - input {
+//     display: none;
+// }
+  
+//   .file - name {
+//     margin - top: var(--spacing - sm);
+//     color: var(--primary - dark);
+//     font - style: italic;
+// }
+
+//   /* Output Box Component */
+//   .output - box - container {
+//     width: 100 %;
+//     max - width: 800px;
+//     background - color: white;
+//     border - radius: var(--border - radius);
+//     padding: var(--spacing - lg);
+//     box - shadow: var(--box - shadow);
+//     border: 2px solid var(--primary - light);
+// }
+  
+//   .output - box - title {
+//     margin - bottom: var(--spacing - md);
+//     color: var(--primary - color);
+//     border - bottom: 2px solid var(--primary - light);
+//     padding - bottom: var(--spacing - sm);
+// }
+  
+//   .output - box - content {
+//     min - height: 200px;
+//     padding: var(--spacing - md);
+//     background - color: var(--secondary - color);
+//     border - radius: var(--border - radius);
+//     white - space: pre - wrap;
+//     word -break: break-word;
+//     font - family: monospace;
+//     border: 1px solid var(--primary - light);
+// }
+
+// /* Responsive styles */
+// @media(max - width: 768px) {
+//     .layout - main {
+//         padding: var(--spacing - md);
+//     }
+    
+//     .output - box - container {
+//         width: 100 %;
+//     }
+    
+//     .file - upload - container {
+//         width: 100 %;
+//     }
+// }
+
+//   /* Button styles that can be reused */
+//   .button {
+//     background - color: var(--primary - color);
+//     color: var(--text - light);
+//     padding: var(--spacing - md) var(--spacing - lg);
+//     border - radius: var(--border - radius);
+//     border: none;
+//     cursor: pointer;
+//     font - weight: bold;
+//     transition: var(--transition);
+//     text - align: center;
+// }
+  
+//   .button:hover {
+//     background - color: var(--primary - dark);
+// }
+
+//   /* Card styles that can be reused */
+//   .card {
+//     background - color: white;
+//     border - radius: var(--border - radius);
+//     padding: var(--spacing - lg);
+//     box - shadow: var(--box - shadow);
+//     border: 1px solid var(--primary - light);
+// }
