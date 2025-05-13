@@ -1,9 +1,10 @@
 import csv
-from event import Event
+
+from models.event import Event
+from models.custom_calendar import Calendar
 
 
-# SAME CODE AS IN OVERLAP FINDER AND RANKER
-class CalendarAnalyzer:
+class CalendarCombiner:
     """
     Analyzes multiple calendars to find overlapping events and rank them based on duration and participation.
 
@@ -13,7 +14,7 @@ class CalendarAnalyzer:
         ranking (list): Ranked list of overlapping events with participant information.
     """
 
-    def __init__(self, calendars: list[list[Event]]):
+    def __init__(self, calendars: list[Calendar]):
         """
         Initialize the analyzer with calendars to compare.
 
@@ -75,7 +76,7 @@ class CalendarAnalyzer:
                 )
 
     def find_pairwise_overlaps(
-        self, calendars_subset: list[list[Event]] = None
+        self, calendars_subset: list[Calendar] = None
     ) -> dict[tuple[int, int], list[Event]]:
         """
         Identify overlapping events between each pair of calendars.
@@ -91,8 +92,8 @@ class CalendarAnalyzer:
         overlaps = {}
         for i in range(len(calendars_subset)):
             for j in range(i + 1, len(calendars_subset)):
-                for event1 in calendars_subset[i]:
-                    for event2 in calendars_subset[j]:
+                for event1 in calendars_subset[i].free_events:
+                    for event2 in calendars_subset[j].free_events:
                         if event1.overlaps(event2):
                             overlap = event1.return_overlap(event2)
                             overlaps.setdefault((i, j), []).append(overlap)
