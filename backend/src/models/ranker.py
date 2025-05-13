@@ -1,4 +1,4 @@
-from event import Event
+from models.event import Event
 
 from overlap_finder import find_all_overlaps
 

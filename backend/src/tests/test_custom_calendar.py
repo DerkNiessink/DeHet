@@ -1,5 +1,5 @@
-from models.custom_time import CustomTime
-from models.custom_calendar import Calendar
+from src.models.custom_time import CustomTime
+from src.models.custom_calendar import Calendar
 
 calendar = Calendar("ics/sacha@wearebit.com.ics")
 
