@@ -5,10 +5,10 @@ import os
 
 one_dir_up = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(one_dir_up)
-from event import Event
-from overlap_finder import find_pairwise_overlaps, find_all_overlaps
-from ranker import return_ranking
-from backend.calendar_analyzer import CalendarAnalyzer
+from models.event import Event
+from models.overlap_finder import find_pairwise_overlaps, find_all_overlaps
+from models.ranker import return_ranking
+from models.calendar_analyzer import CalendarAnalyzer
 
 # Example input (Calendars with events that last at least 2 hours and have overlaps)
 calendar1 = [

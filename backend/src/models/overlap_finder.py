@@ -1,4 +1,4 @@
-from event import Event
+from models.event import Event
 
 
 def find_pairwise_overlaps(
