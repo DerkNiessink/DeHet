@@ -34,11 +34,9 @@ const FileUpload = ({ onFileChange, isLoading = false, error = null, acceptedTyp
         }
     };
 
-
-
-    const acceptedFileTypes = '.ics'
-
-
+    const acceptedFileTypes = acceptedTypes.length > 0
+        ? `.${acceptedTypes.join(',.')}`
+        : undefined;
 
     return (
         <Box sx={{ width: '100%', maxWidth: 500, textAlign: 'center' }}>
@@ -71,10 +69,9 @@ const FileUpload = ({ onFileChange, isLoading = false, error = null, acceptedTyp
                 </Alert>
             )}
 
-
             {acceptedTypes.length > 0 && (
                 <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-                    Accepted file types: {acceptedFileTypes}
+                    Accepted file types: {acceptedTypes.map(type => `.${type}`).join(', ')}
                 </Typography>
             )}
         </Box>

@@ -9,7 +9,7 @@ const config = {
   },
   upload: {
     maxFileSize: 10 * 1024 * 1024, // 10MB
-    acceptedFileTypes: ['txt', 'csv', 'json', 'xml'],
+    acceptedFileTypes: ['.ics'],
   },
   app: {
     name: 'WhenItWorks',
